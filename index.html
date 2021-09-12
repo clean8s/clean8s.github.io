@@ -45,7 +45,19 @@
     border-left: 5px solid;
     padding-left: 5px;
 }
-.taboption { flex-grow: 5; }
+.md-header__option.taboption { flex-grow: 5; }
+.md-header__option.taboption .md-tabs { display: block; }
+.md-header .md-header__button.md-logo { display: block; }
+.md-header .md-header__button[for=__drawer] {
+    display: none;
+}
+@media screen and (max-width: 45em) {
+    .md-tabs { display: none; }
+    .md-header__option.taboption { display: none; }
+    .md-header .md-header__button.md-logo { display: none; }
+    .md-header .md-header__button[for=__drawer] { display: block; }
+}
+
 .md-header .md-header__title { margin-left: 0; }
 .md-header { box-shadow: none !important; }
 </style>
