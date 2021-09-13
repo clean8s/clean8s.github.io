@@ -16,6 +16,7 @@
 
 <title>Reference - clean8s</title>
 
+
 <style>
 .md-main__inner.md-grid { margin: 0; }
 .md-sidebar__scrollwrap { border-right: 1px solid #dcddea; }
@@ -36,8 +37,10 @@
     .md-header .md-header__button[for=__drawer] { display: block; }
 }
 
-.md-header .md-header__title { margin-left: 0; }
+.md-header .md-header__title { margin-left: 0; display: none; }
 .md-header { box-shadow: none !important; }
+.md-header__button.md-logo img, .md-header__button.md-logo svg { width: auto !important; height: 3.3em !important; }
+.md-nav__title .md-nav__button.md-logo img { height: 2rem !important; width: auto !important; }
 </style>
 
     
@@ -94,6 +97,14 @@
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner md-announce">
+          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
+            
+clean8s is not ready for use, this is under development.
+
+          </div>
+        </aside>
       
     </div>
     
@@ -485,12 +496,16 @@
             <div class="md-footer-copyright">
                 
                 <div class="md-footer-copyright__highlight">
-                    clean8s 2021, licensed with MPL.<br/>
-                    Image on home designed by Zirconi Cusso. Statically generated with MkDocs, PyMdown and
+                    <img src="/icon.svg" style="height: 40px; vertical-align: middle" /> — Licensed with MPL <br/><br/>
+                    Image on home designed by Zirconi Cusso. Statically generated with
+                    <a href="https://www.mkdocs.org/">
+                        MkDocs</a>,
+                    <a href="https://facelessuser.github.io/pymdown-extensions/">
+                        PyMdown
+                        </a> and
                     <a
                             href="https://squidfunk.github.io/mkdocs-material/"
-                            target="_blank" rel="noopener"
-                    >
+                            target="_blank" rel="noopener">
                         Material for MkDocs.
                     </a>
                 </div>
