@@ -57,11 +57,6 @@
         pointer-events: all;
     }
 
-    .md-header__option.taboption .md-tabs .md-tabs__link {
-        opacity: 1;
-        transform: none;
-    }
-
     .md-header .md-header__button.md-logo {
         display: block;
     }
@@ -74,10 +69,15 @@
         display: none;
     }
 
+    .md-search .md-search__input {
+        font-size: 0.7rem;
+    }
+
     @media screen and (max-width: 45em) {
         .md-sidebar__scrollwrap {
             border-right: 0;
         }
+
         .md-nav__title[for=__drawer] {
             display: none;
         }
@@ -135,8 +135,37 @@
         top: -100px;
         z-index: -1;
     }
+
     .md-footer-copyright img {
         filter: saturate(0);
+    }
+</style>
+<style>
+    .mmenu-wrap {
+        padding-left: 10px;
+        font-size: .7rem;
+    }
+    .mmenu-wrap ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .mmenu-wrap .menu-title {
+        font-weight: bold;
+    }
+    .mmenu .menu-label.active {
+        color: var(--md-typeset-a-color);
+        border-left: 5px solid;
+        padding-left: 5px;
+    }
+    .mmenu .menu-label {
+        display: block;
+        margin-top: .625em;
+    }
+    .mmenu.level-2 {
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid #dadada;
     }
 </style>
 
@@ -164,7 +193,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="cyan">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="none">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -257,12 +286,22 @@ clean8s is not ready for use, this is under development.
         <nav
         class="md-tabs"
         aria-label="Tabs"
-        data-md-component="tabs"
 >
     <div class="md-tabs__inner md-grid">
         <ul class="md-tabs__list">
             
             
+            
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
             
             
             
@@ -309,9 +348,6 @@ clean8s is not ready for use, this is under development.
         </ul>
     </div>
 </nav>
-            <script>
-
-            </script>
         </div>
         <!-- Color palette -->
         
@@ -386,15 +422,11 @@ clean8s is not ready for use, this is under development.
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
-
-
-
 <div
         class="md-sidebar md-sidebar--primary"
         data-md-component="sidebar"
         data-md-type="navigation"
-        
->
+        hidden>
     <div class="md-sidebar__scrollwrap">
         <div class="md-sidebar__inner">
             
@@ -573,6 +605,66 @@ clean8s is not ready for use, this is under development.
     </div>
 </div>
 
+<div
+        class="md-sidebar"
+        data-md-component="sidebar"
+>
+    <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner">
+            <div class="mmenu-wrap">
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+            <label class="menu-title">Guide</label>
+                
+            
+            <ul class="level-1 mmenu">
+            
+            <li>
+                <label class="menu-label active"><a href="./">Intro</a></label>
+                
+                <ul class="level-2 mmenu">
+                
+                    
+                
+                    
+                    <li><label class="menu-label"><a href="#page2">Page2</a></label></li>
+                    
+                
+                    
+                    <li><label class="menu-label"><a href="#page3">Page3</a></label></li>
+                    
+                
+                </ul>
+                
+            </li>
+            
+            <li>
+                <label class="menu-label"><a href="../quickstart/">Quickstart</a></label>
+                
+            </li>
+            
+            </ul>
+            
+            
+            
+            
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -665,6 +757,8 @@ Color scheme¶
 Source ·  Default: default</p>
 <p>Material for MkDocs supports two color schemes: a light mode, which is just called default, and a dark mode, which is called slate. The color scheme can be set via mkdocs.yml:</p>
 <p>theme:</p>
+<h1 id="page2">Page2</h1>
+<h1 id="page3">Page3</h1>
                 
               
               
@@ -742,7 +836,7 @@ Source ·  Default: default</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "toc.integrate", "navigation.tabs", "navigation.top", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "toc.integrate", "navigation.tabs", "navigation.top", "navigation.sections", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.756773cc.min.js"></script>
