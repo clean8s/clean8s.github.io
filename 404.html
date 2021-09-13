@@ -54,6 +54,12 @@
 
     .md-header__option.taboption .md-tabs {
         display: block;
+        pointer-events: all;
+    }
+
+    .md-header__option.taboption .md-tabs .md-tabs__link {
+        opacity: 1;
+        transform: none;
     }
 
     .md-header .md-header__button.md-logo {
@@ -158,7 +164,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="cyan">
   
     
     <script>function __prefix(e){return new URL("/",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -181,7 +187,7 @@ clean8s is not ready for use, this is under development.
       
     </div>
     
-<!--
+      <!--
   Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to
@@ -242,25 +248,23 @@ clean8s is not ready for use, this is under development.
                 </div>
             </div>
         </div>
-        <div class="md-header__option taboption" data-md-component="palette">
-        
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
-    <a href="/." class="md-tabs__link">
-      Home
-    </a>
-  </li>
-
-      
-        
+        <div class="md-header__option taboption">
+        <nav
+        class="md-tabs"
+        aria-label="Tabs"
+        data-md-component="tabs"
+>
+    <div class="md-tabs__inner md-grid">
+        <ul class="md-tabs__list">
+            
+            
+            
+            
+            
+            
+            
+            
+            
   
   
 
@@ -275,8 +279,10 @@ clean8s is not ready for use, this is under development.
     </li>
   
 
-      
-        
+            
+            
+            
+            
   
   
 
@@ -291,10 +297,14 @@ clean8s is not ready for use, this is under development.
     </li>
   
 
-      
-    </ul>
-  </div>
+            
+            
+        </ul>
+    </div>
 </nav>
+            <script>
+
+            </script>
         </div>
         <!-- Color palette -->
         
@@ -360,7 +370,7 @@ clean8s is not ready for use, this is under development.
         
     </nav>
 </header>
-
+    
     <div class="md-container" data-md-component="container">
       
       
@@ -434,18 +444,33 @@ clean8s is not ready for use, this is under development.
   
   
   
+    <li class="md-nav__item">
+      <a href="/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" data-md-state="indeterminate" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
-      <label class="md-nav__link" for="__nav_2">
+      <label class="md-nav__link" for="__nav_3">
         Guide
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Guide" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Guide
         </label>
@@ -492,14 +517,14 @@ clean8s is not ready for use, this is under development.
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
       
-      <label class="md-nav__link" for="__nav_3">
+      <label class="md-nav__link" for="__nav_4">
         Reference
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Reference" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Reference
         </label>
@@ -581,11 +606,8 @@ clean8s is not ready for use, this is under development.
             <div class="md-footer-copyright">
                 
                 <div class="md-footer-copyright__highlight">
-                    <img src="/icon.svg" style="height: 40px; vertical-align: middle" /> — Mozilla Public License 2.0 <br/><br/>
+                    <img src="/icon.svg" style="height: 40px; vertical-align: middle; padding-right: 10px" /> | <a href="/">Home</a> | <a href="/security/">Security notice</a> <br/>
                     Statically generated with
-                    <a href="https://github.com/features/actions">GitHub Actions</a> +
-                    <a href="https://www.mkdocs.org/">
-                        MkDocs</a> +
                     <a href="https://facelessuser.github.io/pymdown-extensions/">
                         PyMdown
                         </a> +
