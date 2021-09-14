@@ -143,7 +143,7 @@
 <style>
     .mmenu-wrap {
         padding-left: 10px;
-        font-size: .7rem;
+        font-size: .8rem;
     }
     .mmenu-wrap ul {
         margin: 0;
@@ -166,6 +166,35 @@
         margin-left: 10px;
         padding-left: 10px;
         border-left: 1px solid #dadada;
+    }
+    .mmenu.level-2 a:target {
+        color: var(--md-typeset-a-color);
+    }
+    .md-sidebarr {
+        position: fixed;
+        left: 0;
+        width: 12.1rem;
+        top: 5rem;
+        padding-top: 10px;
+        bottom: 0;
+        background: #fff;
+        z-index: 200;
+        border-right: 1px solid #dadada;
+        overflow: hidden;
+        transition: width 200ms;
+        box-shadow: -5px 0px 2px rgba(0,0,0,0.1) inset;
+    }
+    .sidebarr-expander {
+        width: 12.1rem; flex-shrink: 0;
+        transition: width 200ms;
+    }
+    @media screen and (max-width: 800px) {
+        .md-sidebarr, .sidebarr-expander {
+            width: 25vmin;
+        }
+        .mmenu-wrap {
+            font-size: 2vmin;
+        }
     }
 </style>
 
@@ -210,14 +239,6 @@
       
     </div>
     <div data-md-component="announce">
-      
-        <aside class="md-banner md-announce">
-          <div class="md-banner__inner md-announce__inner md-grid md-typeset">
-            
-clean8s is not ready for use, this is under development.
-
-          </div>
-        </aside>
       
     </div>
     
@@ -417,6 +438,9 @@ clean8s is not ready for use, this is under development.
     <div class="md-container" data-md-component="container">
       
       
+<div style="padding: 10px;background:#333;color:#fff;font-size:0.5rem;text-align:center">
+    🔨 👷 clean8s is not ready for use, this is under development.
+</div>
 
 <div class="page-wrap intro"></div>
 
@@ -668,7 +692,7 @@ clean8s is not ready for use, this is under development.
     <!-- Further information -->
     <div class="md-footer-meta md-typeset">
         <div class="md-footer-meta__inner md-grid">
-
+            <div class="sidebarr-expander"></div>
             <!-- Copyright and theme information -->
             <div class="md-footer-copyright">
                 
