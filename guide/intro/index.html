@@ -170,19 +170,22 @@
     .mmenu.level-2 a:target {
         color: var(--md-typeset-a-color);
     }
+    .md-footer {
+        position: relative;
+        z-index: 999;
+    }
     .md-sidebarr {
         position: fixed;
         left: 0;
         width: 12.1rem;
-        top: 5rem;
+        top: 3.2rem;
         padding-top: 10px;
         bottom: 0;
         background: #fff;
-        z-index: 200;
+        z-index: 1;
         border-right: 1px solid #dadada;
         overflow: hidden;
         transition: width 200ms;
-        box-shadow: -5px 0px 2px rgba(0,0,0,0.1) inset;
     }
     .sidebarr-expander {
         width: 12.1rem; flex-shrink: 0;
@@ -828,7 +831,6 @@ Source ·  Default: default</p>
     <!-- Further information -->
     <div class="md-footer-meta md-typeset">
         <div class="md-footer-meta__inner md-grid">
-            <div class="sidebarr-expander"></div>
             <!-- Copyright and theme information -->
             <div class="md-footer-copyright">
                 
