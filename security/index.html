@@ -594,11 +594,48 @@ clean8s is not ready for use, this is under development.
     </div>
 </div>
 
+<style>
+    .md-sidebarr {
+        position: fixed; left: 0; width: 12.1rem; top: 6.5rem; bottom: 0; background:#fff; z-index: 200; border-right: 1px solid #dadada;
+        overflow: hidden;
+        transition: width 200ms;
+    }
+    .sidebarr-expander {
+        width: 12.1rem; flex-shrink: 0;
+        transition: width 200ms;
+    }
+    #mmenu-collapse:checked ~ .md-sidebarr {
+        width: 1rem;
+    }
+    #mmenu-collapse:checked ~ .sidebarr-expander {
+        width: 1rem;
+    }
+    #mmenu-button {
+        position: fixed; left: 0.8rem; top: 3rem; font-size: 0.7rem;
+        padding: 5px;
+        border: 2px solid #fff;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        z-index: 205;
+
+    }
+    #mmenu-button:before {
+        content: "Hide";
+    }
+    #mmenu-collapse:checked ~ #mmenu-button:before {
+        content: "Show";
+    }
+    </style>
+<input type="checkbox" style="opacity: 0;" id="mmenu-collapse" />
+<label for="mmenu-collapse" id="mmenu-button">
+    <img style="vertical-align: middle" src="data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' enable-background='new 0 0 24 24' height='24px' viewBox='0 0 24 24' width='24px' fill='%23FFFFFF'%3E%3Crect fill='none' height='24' width='24'/%3E%3Cpath d='M8.5,8.62v6.76L5.12,12L8.5,8.62 M10,5l-7,7l7,7V5L10,5z M14,5v14l7-7L14,5z'/%3E%3C/svg%3E" /></label>
+<div class="sidebarr-expander"></div>
 <div
-        class="md-sidebar"
-        data-md-component="sidebar"
+        class="md-sidebarr"
+        data-md-component="sidebarr"
 >
-    <div class="md-sidebar__scrollwrap">
+    <div class="">
         <div class="md-sidebar__inner">
             <div class="mmenu-wrap">
             
