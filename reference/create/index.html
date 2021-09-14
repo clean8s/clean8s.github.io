@@ -174,7 +174,7 @@
         position: relative;
         z-index: 999;
     }
-    .md-sidebarr {
+    .sidebar-nav {
         position: fixed;
         left: 0;
         width: 12.1rem;
@@ -187,32 +187,46 @@
         overflow: hidden;
         transition: width 200ms;
     }
-    .sidebarr-expander {
+    .sidebar-expander {
         width: 12.1rem; flex-shrink: 0;
         transition: width 200ms;
     }
+    .cool-btn {
+        display: none;
+    }
+    #sidebar-toggle {
+        position: absolute;
+        visibility: hidden;
+    }
     @media screen and (max-width: 800px) {
-        .md-sidebarr, .sidebarr-expander {
+        .sidebar-nav, .sidebar-expander {
             width: 25vmin;
         }
         .mmenu-wrap {
             font-size: 2vmin;
         }
-    }
-    .cool-btn {
-        background: var(--md-typeset-a-color);
-        padding: 0.5rem 0.2rem;
-        border: 0;
-        color: #fff;
-        width: 100%;
-        font-size: 0.7rem;
-        margin-left: -5px;
-        margin-bottom: 1rem;
-    }
-    .cool-btn .cool-icon {
-        display: inline-flex;
-        height: 1.125em;
-        vertical-align: text-top;
+        .cool-btn {
+            user-select: none;
+            display: block;
+            background: var(--md-typeset-a-color);
+            padding: 0.5rem 0.2rem;
+            border: 0;
+            color: #fff;
+            width: 100%;
+            font-size: 0.7rem;
+            margin-left: -5px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {
+            width: 0;
+        }
+        .cool-btn .cool-icon {
+            display: inline-flex;
+            height: 1.125em;
+            vertical-align: text-top;
+        }
     }
 </style>
 
@@ -644,18 +658,19 @@
     </div>
 </div>
 
-<div class="sidebarr-expander"></div>
+<input type="checkbox" id="sidebar-toggle" />
+<div class="sidebar-expander"></div>
 <div
-        class="md-sidebarr"
+        class="sidebar-nav"
         data-md-component="sidebarr"
 >
     <div class="">
         <div class="md-sidebar__inner">
             <div class="mmenu-wrap">
-                <button class="cool-btn">mininav
+                <label for="sidebar-toggle" class="cool-btn">mininav
                     <span class="cool-icon">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#fff" d="M19.5 3.09 15 7.59V4h-2v7h7V9h-3.59l4.5-4.5-1.41-1.41M4 13v2h3.59l-4.5 4.5 1.41 1.41 4.5-4.5V20h2v-7H4z"/></svg></span>
-                </button>
+                </label>
             
             
             
@@ -754,14 +769,14 @@
                 
                 <div class="md-footer-copyright__highlight">
                     <img src="/icon.svg" style="height: 40px; vertical-align: middle; padding-right: 10px" /> | <a href="/">Home</a> | <a href="/security/">Security notice</a> <br/>
-                    Statically generated with
+                    Designing this page wouldn't be possible without
                     <a href="https://facelessuser.github.io/pymdown-extensions/">
                         PyMdown
-                        </a> +
+                        </a> and
                     <a
                             href="https://squidfunk.github.io/mkdocs-material/"
                             target="_blank" rel="noopener">
-                        Material for MkDocs.
+                        Material for MkDocs. Support FOSS.
                     </a>
                 </div>
                 
