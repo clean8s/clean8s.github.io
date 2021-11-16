@@ -367,6 +367,9 @@
             
             
             
+            
+            
+            
   
   
 
@@ -604,6 +607,46 @@
 
 
 
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+<!-- Determine class according to state -->
+
+
+
+
+
+
+
+
 
 
     
@@ -730,6 +773,8 @@
             
             
             
+            
+            
                 
                 
                 
@@ -755,8 +800,63 @@
                 
                   <h1>Security</h1>
                 
-                <div class="highlight"><pre><span></span><code>GPG: &lt;...&gt;
-security@clean8s.com
+                <div class="highlight"><pre><span></span><code>security@clean8s.com
+GPG:
+clean8s security &lt;security@clean8s.com&gt; 0xAE835EA0CCC61715
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+K3ZSkxu5RIB0MaAjiPK5/kxnXk+V5WQ=
+=L3T1
+-----END PGP PUBLIC KEY BLOCK-----
 </code></pre></div>
                 
               
@@ -807,8 +907,8 @@ security@clean8s.com
         <div class="md-footer-meta__inner md-grid">
             <!-- Copyright and theme information -->
             <div class="md-footer-copyright">
-                <a href="">FOSS & notices</a> /
-                <a href="">Security & disclosure</a> /
+                <a href="/foss">FOSS & notices</a> /
+                <a href="/security">Security & disclosure</a> /
                 Copyright &copy; clean8s
                 
                 

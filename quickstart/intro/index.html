@@ -372,6 +372,9 @@
             
             
             
+            
+            
+            
   
   
     
@@ -651,6 +654,46 @@
 
 
 
+    
+      
+      
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
+
+
+<!-- Render current and nested navigation items -->
+
+
+<!-- Determine class according to state -->
+
+
+
+
+
+
+
+
 
 
 
@@ -742,6 +785,8 @@
             
             
             
+            
+            
                 
                 
                 
@@ -757,14 +802,6 @@
                 
                 <ul class="level-2 mmenu">
                 
-                    
-                
-                    
-                    <li><label class="menu-label"><a href="#page2">Page2</a></label></li>
-                    
-                
-                    
-                    <li><label class="menu-label"><a href="#page3">Page3</a></label></li>
                     
                 
                 </ul>
@@ -796,93 +833,6 @@
                 
                 
                 <h1 id="intro">Intro</h1>
-<p>[TODO: Fill intro]
-<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-<span class="hll">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
-</span><span class="hll">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">):</span>
-</span>            <span class="k">if</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
-                <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">items</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-</code></pre></div></p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">C</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">C++</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
-<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Unordered List</label><div class="tabbed-content">
-<p><em>Example</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">*</span> Sed sagittis eleifend rutrum
-<span class="k">*</span> Donec vitae suscipit est
-<span class="k">*</span> Nulla tempor lobortis orci
-</code></pre></div>
-<p><em>Result</em>:</p>
-<ul>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ul>
-</div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Ordered List</label><div class="tabbed-content">
-<p><em>Example</em>:</p>
-<div class="highlight"><pre><span></span><code><span class="k">1.</span> Sed sagittis eleifend rutrum
-<span class="k">2.</span> Donec vitae suscipit est
-<span class="k">3.</span> Nulla tempor lobortis orci
-</code></pre></div>
-<p><em>Result</em>:</p>
-<ol>
-<li>Sed sagittis eleifend rutrum</li>
-<li>Donec vitae suscipit est</li>
-<li>Nulla tempor lobortis orci</li>
-</ol>
-</div>
-</div>
-</div>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>GET</code></td>
-<td>:material-check:     Fetch resource</td>
-</tr>
-<tr>
-<td><code>PUT</code></td>
-<td>:material-check-all: Update resource</td>
-</tr>
-<tr>
-<td><code>DELETE</code></td>
-<td>:material-close:     Delete resource</td>
-</tr>
-</tbody>
-</table>
-<p>As any proper Material Design implementation, Material for MkDocs supports Google's original color palette, which can be easily configured through mkdocs.yml. Furthermore, colors can be customized with a few lines of CSS to fit your brand's identity by using CSS variables.</p>
-<p>Configuration¶
-Color palette¶
-Color scheme¶
-Source ·  Default: default</p>
-<p>Material for MkDocs supports two color schemes: a light mode, which is just called default, and a dark mode, which is called slate. The color scheme can be set via mkdocs.yml:</p>
-<p>theme:</p>
-<h1 id="page2">Page2</h1>
-<h1 id="page3">Page3</h1>
                 
               
               
@@ -932,8 +882,8 @@ Source ·  Default: default</p>
         <div class="md-footer-meta__inner md-grid">
             <!-- Copyright and theme information -->
             <div class="md-footer-copyright">
-                <a href="">FOSS & notices</a> /
-                <a href="">Security & disclosure</a> /
+                <a href="/foss">FOSS & notices</a> /
+                <a href="/security">Security & disclosure</a> /
                 Copyright &copy; clean8s
                 
                 
