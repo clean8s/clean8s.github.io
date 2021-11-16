@@ -172,6 +172,9 @@
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mt-\[-15px\] {
+  margin-top: -15px;
+}
 .mt-30 {
   margin-top: 7.5rem;
 }
