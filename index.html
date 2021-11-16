@@ -296,7 +296,8 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 -->
-<link rel="stylesheet" href="/static/windi.css">
+<link rel="stylesheet" href="/static/windi.css?2">
+<!--<script src="https://unpkg.com/windi-live-transform"></script>-->
 <!-- Header -->
 
 
@@ -609,9 +610,9 @@
       Launch alpha on GitHub Packages
     </button>
     <br/>
-    <div class="flex my-10 max-w-[800px] flex-row flex-none items-center justify-around mx-auto">
-      <img src="/static/sneek.png" class="block"/>
-      <img src="/static/sneek2.png" class="block"/>
+    <div class="md:flex my-10 max-w-[800px] flex-row flex-none items-center justify-around mx-auto">
+      <img src="/static/sneek.png" class="block <md:!w-auto <md:mx-auto <md:mb-5"/>
+      <img src="/static/sneek2.png" class="block <md:!w-auto <md:mx-auto"/>
     </div>
 
    <div class="my-10 max-w-[500px] mx-auto">
@@ -620,9 +621,9 @@
         and <strong>kcl Studio</strong> (a Web IDE and debugger).
       </h2>
 
-   <div class="flex flex-row justify-around w-[500px] mx-auto">
-        <img src="/static/studio.svg" class="block w-[200px]"/>
-        <img src="/static/kcl.svg" class="block w-[200px]"/>
+   <div class="md:flex flex-row justify-around max-w-[500px] mx-auto">
+        <img src="/static/studio.svg" class="block w-[200px] <md:mx-auto <md:mb-5"/>
+        <img src="/static/kcl.svg" class="block w-[200px] <md:mx-auto"/>
       </div>
     </div>
 
