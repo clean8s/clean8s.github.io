@@ -355,8 +355,9 @@
   }
 }
 @media (max-width: 767.9px) {
-  .\<md\:hidden {
-    display: none;
+  .\<md\:text-\[0\.55rem\] {
+    font-size: 0.55rem;
+    line-height: 1;
   }
   .\<md\:mx-auto {
     margin-left: auto;
