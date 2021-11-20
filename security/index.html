@@ -31,8 +31,16 @@
     
     
 <style>
+    body {
+        --full-size: min(100vw, 61rem);
+
+        --sidebar: min(20em, 25vw);
+        --content: calc(var(--full-size) - var(--sidebar));
+    }
+
     .md-main__inner.md-grid {
         margin: 0;
+        width: var(--full-size);
     }
 
     .intro ~ .md-main .md-main__inner.md-grid {
@@ -175,68 +183,71 @@
         z-index: 999;
     }
     .sidebar-nav {
-        position: fixed;
+        position: sticky;
+
+        top: 60px;
         left: 0;
-        width: 12.1rem;
-        top: 3.2rem;
+        width: var(--sidebar);
+        height: 90vh;
+
+        flex-basis: var(--sidebar);
         padding-top: 10px;
-        bottom: 0;
         background: #fff;
         z-index: 1;
         border-right: 1px solid #dadada;
         overflow: hidden;
         transition: width 200ms;
     }
-    .sidebar-expander {
-        width: 12.1rem; flex-shrink: 0;
-        transition: width 200ms;
+    .md-content {
+        flex-basis: var(--content);
+        width: var(--content);
     }
-    .cool-btn {
-        display: none;
-    }
-    #sidebar-toggle {
-        position: absolute;
-        visibility: hidden;
-    }
-    @media screen and (max-width: 800px) {
-        .sidebar-nav, .sidebar-expander {
-            width: 25vmin;
-        }
-        .mmenu-wrap {
-            font-size: 2.4vmin;
-        }
-        .cool-btn {
-            user-select: none;
-            display: block;
-            background: var(--md-typeset-a-color);
-            padding: 0.5rem 0.2rem;
-            border: 0;
-            color: #fff;
-            width: 100%;
-            font-size: 0.7rem;
-            margin-left: -5px;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            text-align: center;
-        }
-        .opposite-btn {
-            position: fixed;
-            bottom: 1rem;
-            left: 0.2rem;
-            background: var(--md-typeset-a-color);
-            padding: 0.5rem 0.2rem;
-            border: 0;
+    /*.cool-btn {*/
+    /*    display: none;*/
+    /*}*/
+    /*#sidebar-toggle {*/
+    /*    position: absolute;*/
+    /*    visibility: hidden;*/
+    /*}*/
+    /*@media screen and (max-width: 800px) {*/
+    /*    .sidebar-nav {*/
+    /*        width: 25vmin;*/
+    /*    }*/
+    /*    .mmenu-wrap {*/
+    /*        font-size: 2.4vmin;*/
+    /*    }*/
+    /*    .cool-btn {*/
+    /*        user-select: none;*/
+    /*        display: block;*/
+    /*        background: var(--md-typeset-a-color);*/
+    /*        padding: 0.5rem 0.2rem;*/
+    /*        border: 0;*/
+    /*        color: #fff;*/
+    /*        width: 100%;*/
+    /*        font-size: 0.7rem;*/
+    /*        margin-left: -5px;*/
+    /*        margin-bottom: 1rem;*/
+    /*        cursor: pointer;*/
+    /*        text-align: center;*/
+    /*    }*/
+    /*    .opposite-btn {*/
+    /*        position: fixed;*/
+    /*        bottom: 1rem;*/
+    /*        left: 0.2rem;*/
+    /*        background: var(--md-typeset-a-color);*/
+    /*        padding: 0.5rem 0.2rem;*/
+    /*        border: 0;*/
 
-        }
-        #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {
-            width: 0;
-        }
-        .cool-btn .cool-icon {
-            display: inline-flex;
-            height: 1.125em;
-            vertical-align: text-top;
-        }
-    }
+    /*    }*/
+    /*    #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {*/
+    /*        width: 0;*/
+    /*    }*/
+    /*    .cool-btn .cool-icon {*/
+    /*        display: inline-flex;*/
+    /*        height: 1.125em;*/
+    /*        vertical-align: text-top;*/
+    /*    }*/
+    /*}*/
 </style>
 
     
@@ -303,11 +314,14 @@
 -->
 
 
-<link rel="stylesheet" href="/static/windi.css?3778">
+<link rel="stylesheet" href="/static/windi.css?v3725">
 
 
 <!-- Header -->
 
+<a href="/" class="block text-center py-1">
+    <img src="/static/logo.svg" class="align-middle" style="height: 30px;" alt="" /> <span class="<md:hidden align-middle ml-3 text-xs font-mono tracking-wide text-gray-500">clean & simple Kubernetes tools</span>
+</a>
 <header class="md-header" data-md-component="header">
     <nav
             class="md-header__inner md-grid"
@@ -323,7 +337,7 @@
                 data-md-component="logo"
         >
             
-  <img src="../icon.svg?v2" alt="logo">
+  <img src="/static/kcl.svg?v2" alt="logo">
 
         </a>
 
@@ -496,7 +510,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="kcl by clean8s" class="md-nav__button md-logo" aria-label="kcl by clean8s" data-md-component="logo">
       
-  <img src="../icon.svg?v2" alt="logo">
+  <img src="/static/kcl.svg?v2" alt="logo">
 
     </a>
     kcl by clean8s
@@ -737,21 +751,20 @@
     </div>
 </div>
 
-<input type="checkbox" id="sidebar-toggle" />
-<div class="sidebar-expander"></div>
+<!--<input type="checkbox" id="sidebar-toggle" />-->
 <div
         class="sidebar-nav"
         data-md-component="sidebarr"
 >
-    <div class="">
+    <div style="">
         <div class="md-sidebar__inner">
             <div class="mmenu-wrap">
-                <label for="sidebar-toggle" class="cool-btn">
-                    <span class="cool-icon">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FFF" d="M11.92 19.92 4 12l7.92-7.92 1.41 1.42-5.5 5.5H22v2H7.83l5.51 5.5-1.42 1.42M4 12V2H2v20h2V12z"/></svg>
-                    </span>
-                hide nav
-                </label>
+<!--                <label for="sidebar-toggle" class="cool-btn">-->
+<!--                    <span class="cool-icon">-->
+<!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#FFF" d="M11.92 19.92 4 12l7.92-7.92 1.41 1.42-5.5 5.5H22v2H7.83l5.51 5.5-1.42 1.42M4 12V2H2v20h2V12z"/></svg>-->
+<!--                    </span>-->
+<!--                hide nav-->
+<!--                </label>-->
             
             
             

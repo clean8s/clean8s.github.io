@@ -31,8 +31,16 @@
     
     
 <style>
+    body {
+        --full-size: min(100vw, 61rem);
+
+        --sidebar: min(20em, 25vw);
+        --content: calc(var(--full-size) - var(--sidebar));
+    }
+
     .md-main__inner.md-grid {
         margin: 0;
+        width: var(--full-size);
     }
 
     .intro ~ .md-main .md-main__inner.md-grid {
@@ -175,68 +183,71 @@
         z-index: 999;
     }
     .sidebar-nav {
-        position: fixed;
+        position: sticky;
+
+        top: 60px;
         left: 0;
-        width: 12.1rem;
-        top: 3.2rem;
+        width: var(--sidebar);
+        height: 90vh;
+
+        flex-basis: var(--sidebar);
         padding-top: 10px;
-        bottom: 0;
         background: #fff;
         z-index: 1;
         border-right: 1px solid #dadada;
         overflow: hidden;
         transition: width 200ms;
     }
-    .sidebar-expander {
-        width: 12.1rem; flex-shrink: 0;
-        transition: width 200ms;
+    .md-content {
+        flex-basis: var(--content);
+        width: var(--content);
     }
-    .cool-btn {
-        display: none;
-    }
-    #sidebar-toggle {
-        position: absolute;
-        visibility: hidden;
-    }
-    @media screen and (max-width: 800px) {
-        .sidebar-nav, .sidebar-expander {
-            width: 25vmin;
-        }
-        .mmenu-wrap {
-            font-size: 2.4vmin;
-        }
-        .cool-btn {
-            user-select: none;
-            display: block;
-            background: var(--md-typeset-a-color);
-            padding: 0.5rem 0.2rem;
-            border: 0;
-            color: #fff;
-            width: 100%;
-            font-size: 0.7rem;
-            margin-left: -5px;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            text-align: center;
-        }
-        .opposite-btn {
-            position: fixed;
-            bottom: 1rem;
-            left: 0.2rem;
-            background: var(--md-typeset-a-color);
-            padding: 0.5rem 0.2rem;
-            border: 0;
+    /*.cool-btn {*/
+    /*    display: none;*/
+    /*}*/
+    /*#sidebar-toggle {*/
+    /*    position: absolute;*/
+    /*    visibility: hidden;*/
+    /*}*/
+    /*@media screen and (max-width: 800px) {*/
+    /*    .sidebar-nav {*/
+    /*        width: 25vmin;*/
+    /*    }*/
+    /*    .mmenu-wrap {*/
+    /*        font-size: 2.4vmin;*/
+    /*    }*/
+    /*    .cool-btn {*/
+    /*        user-select: none;*/
+    /*        display: block;*/
+    /*        background: var(--md-typeset-a-color);*/
+    /*        padding: 0.5rem 0.2rem;*/
+    /*        border: 0;*/
+    /*        color: #fff;*/
+    /*        width: 100%;*/
+    /*        font-size: 0.7rem;*/
+    /*        margin-left: -5px;*/
+    /*        margin-bottom: 1rem;*/
+    /*        cursor: pointer;*/
+    /*        text-align: center;*/
+    /*    }*/
+    /*    .opposite-btn {*/
+    /*        position: fixed;*/
+    /*        bottom: 1rem;*/
+    /*        left: 0.2rem;*/
+    /*        background: var(--md-typeset-a-color);*/
+    /*        padding: 0.5rem 0.2rem;*/
+    /*        border: 0;*/
 
-        }
-        #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {
-            width: 0;
-        }
-        .cool-btn .cool-icon {
-            display: inline-flex;
-            height: 1.125em;
-            vertical-align: text-top;
-        }
-    }
+    /*    }*/
+    /*    #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {*/
+    /*        width: 0;*/
+    /*    }*/
+    /*    .cool-btn .cool-icon {*/
+    /*        display: inline-flex;*/
+    /*        height: 1.125em;*/
+    /*        vertical-align: text-top;*/
+    /*    }*/
+    /*}*/
 </style>
 
     
@@ -298,7 +309,7 @@
 -->
 
 
-<link rel="stylesheet" href="/static/windi.css?2830">
+<link rel="stylesheet" href="/static/windi.css?v1415">
 
 
 <!-- Header -->
@@ -333,7 +344,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="kcl by clean8s" class="md-nav__button md-logo" aria-label="kcl by clean8s" data-md-component="logo">
       
-  <img src="icon.svg?v2" alt="logo">
+  <img src="/static/kcl.svg?v2" alt="logo">
 
     </a>
     kcl by clean8s
@@ -587,133 +598,144 @@
                 
                 
                 <div class="container !max-w-[1000px] mx-auto">
-  <div class="flex items-center justify-between">
-  <img src="/static/logo.svg" class="!w-auto !h-[50px]" alt="clean8s"/>
-  <a href="/quickstart/intro/" class="block">Quickstart &raquo;</a>
-  </div>
-  <div class="text-center w-full mt-5 md:px-10">
-  <h1 class="text-3xl !font-bold !text-black !m-0">Clean the Kubernetes YAML and chart mess</h1>
-  <h2 class="text-gray-600 py-3 font-bold text-2xl !m-0">A carefully crafted language and developer tools for building fast.</h2>.
-
-  <button onclick="alert('Sorry, no free spaces at the moment!')" class="shadow-xl cursor-pointer bg-[#006FF0] px-5 text-md py-2 text-white border-0 rounded">
-      <svg class="align-middle w-6 h-6 fill-current text-white inline-block" width="20" height="20" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
-      Launch alpha on GitHub Packages
-    </button>
-    <br/>
-    <div class="md:flex my-10 max-w-[800px] flex-row flex-none items-center justify-around mx-auto">
-      <img src="/static/sneek.png" class="block <md:!w-auto <md:mx-auto <md:mb-5"/>
-      <img src="/static/sneek2.png" class="block <md:!w-auto <md:mx-auto"/>
+    <div class="flex items-center justify-between">
+        <img src="/static/logo.svg" class="!w-auto !h-[50px]" alt="clean8s"/>
+        <a href="/quickstart/intro/" class="block">Quickstart &raquo;</a>
     </div>
+    <div class="text-center w-full mt-5 md:px-10">
+        <h1 class="text-3xl !font-bold !text-black !m-0">Clean the Kubernetes YAML and chart mess</h1>
+        <h2 class="text-gray-600 py-3 font-bold text-2xl !m-0">A carefully crafted language and developer tools for
+            building fast.</h2>.
 
-   <div class="my-10 max-w-[500px] mx-auto">
-      <h2 class="text-2xl font-thin text-gray-600">clean8s for Kubernetes contains:<br/> the <strong>kcl</strong>
-        language
-        and <strong>kcl Studio</strong>, the Web IDE/debugger.
-      </h2>
-
-   <div class="md:flex flex-row justify-around max-w-[500px] mx-auto">
-        <img src="/static/studio.svg" class="block w-[200px] <md:mx-auto <md:mb-5"/>
-        <img src="/static/kcl.svg" class="block w-[200px] <md:mx-auto"/>
-      </div>
-    </div>
-
-<div class="mt-8">
-    <div class="flex items-center">
-      <h4 class="flex-shrink-0 pr-4 bg-white dark:bg-gray-800 text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600">
-        For beginners
-      </h4>
-      <div class="flex-1 h-[2px] bg-gray-300">
-      </div>
-    </div>
-      <ul class="">
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          A web IDE that lets you mount and inspect inside containers and easily write code
-        </li>
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          One-click container image building & registry setup
-        </li>
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          A library that covers casual deployment workflows without configuration
-        </li>
-      </ul>
-
-   </div>
-
-   <div class="mt-8">
-      <div class="flex items-center">
-        <h4 class="flex-shrink-0 pr-4 bg-white dark:bg-gray-800 text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600">
-          For DevOps professionals
-        </h4>
-        <div class="flex-1 h-[2px] bg-gray-300">
+        <button onclick="alert('Sorry, no free spaces at the moment!')"
+                class="shadow-xl cursor-pointer bg-[#006FF0] px-5 text-md py-2 text-white border-0 rounded">
+            <svg class="align-middle w-6 h-6 fill-current text-white inline-block" width="20" height="20"
+                 viewBox="0 0 496 512">
+                <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+            </svg>
+            Launch alpha on GitHub Packages
+        </button>
+        <br/>
+        <div class="md:flex my-10 max-w-[800px] flex-row flex-none items-center justify-around mx-auto">
+            <img src="/static/sneek.png" class="block <md:!w-auto <md:mx-auto <md:mb-5"/>
+            <img src="/static/sneek2.png" class="block <md:!w-auto <md:mx-auto"/>
         </div>
-      </div>
-      <ul class="">
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          Debug internal Kubernetes API calls
-        </li>
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          Create custom Controllers and dynamic resources
-        </li>
-        <li class="flex items-center my-2">
-          <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0" />
-          Extend and transform deployment plans in any programming language
-        </li>
-      </ul>
+
+        <div class="my-10 max-w-[500px] mx-auto">
+            <h2 class="text-2xl font-thin text-gray-600">clean8s for Kubernetes contains:<br/> the <strong>kcl</strong>
+                language
+                and <strong>kcl Studio</strong>, the Web IDE/debugger.
+            </h2>
+
+            <div class="md:flex flex-row justify-around max-w-[500px] mx-auto">
+                <img src="/static/studio.svg" class="block w-[200px] <md:mx-auto <md:mb-5"/>
+                <img src="/static/kcl.svg" class="block w-[200px] <md:mx-auto"/>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <div class="flex items-center">
+                <h4 class="flex-shrink-0 pr-4 bg-white dark:bg-gray-800 text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600">
+                    For beginners
+                </h4>
+                <div class="flex-1 h-[2px] bg-gray-300">
+                </div>
+            </div>
+            <ul class="">
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    A web IDE that lets you mount and inspect inside containers and easily write code
+                </li>
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    One-click container image building & registry setup
+                </li>
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    A library that covers casual deployment workflows without configuration
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="mt-8">
+            <div class="flex items-center">
+                <h4 class="flex-shrink-0 pr-4 bg-white dark:bg-gray-800 text-sm leading-5 tracking-wider font-semibold uppercase text-indigo-600">
+                    For DevOps professionals
+                </h4>
+                <div class="flex-1 h-[2px] bg-gray-300">
+                </div>
+            </div>
+            <ul class="">
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    Debug internal Kubernetes API calls
+                </li>
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    Create custom Controllers and dynamic resources
+                </li>
+                <li class="flex items-center my-2">
+                    <img src="/static/tick2.svg" class="w-5 h-5 mr-2 flex-shrink-0"/>
+                    Extend and transform deployment plans in any programming language
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="mt-0">
+
+
+            <div class="bg-lightblue pt-20 px-4">
+                <div class="mx-auto max-w-6xl flex flex-col md:flex-row">
+                    <div class="align-middle md:py-15 mr-8 w-full md:w-2/5 text-3xl font-thin leading-9">
+                        We've learned from the strengths and weaknesses of <span class="text-[#9970CB]">Terraform</span>,
+                        <span class="text-[#F7B832]">Pu</span><span class="text-[#F7A9B3]">lumi</span>
+                        and the UX of modern code editors.
+                        <svg xmlns="http://www.w3.org/2000/svg" class="align-middle inline-block" width="32" height="32"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <dl class="w-full md:w-3/5">
+                        <dt class="mb-4">
+                            <h3 class="text-xl !m-0 font-semibold">
+                                <div class="text-2xl">🎨</div>
+                                The syntax and beautiful diagnostics of Terraform/HCL
+                            </h3>
+                        </dt>
+                        <dd class="mb-16">
+                            <p>
+                                <strong>kcl</strong> uses the same parser as languages in the Hashicorp family and
+                                embraces its block-based
+                                static strongly typed nature.
+                                <br/>
+                                It also introduces <strong>namespacing syntax</strong> and a refined stdlib unlike
+                                Terraform it offers a <strong>less assertive execution strategy</strong> that gives the
+                                user
+                                more abilities to influence deployments.
+                            </p>
+                        </dd>
+                        <dt class="mb-4">
+                            <h3 class="text-xl font-semibold">
+                                <div class="text-2xl">🔨</div>
+                                The flexibility during execution of Pulumi
+                            </h3>
+                        </dt>
+                        <dd class="mb-16">
+                            <p>
+                                kcl offers a simple guided CLI and lets the user pick a Turing-complete language for
+                                maximum flexibility: you can
+                                dig under the abstractions and rewrite kubernetes API queries and plans as you wish.
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-
-   <div class="mt-0">
-
-
-  <div class="bg-lightblue pt-20 px-4">
-    <div class="mx-auto max-w-6xl flex flex-col md:flex-row">
-      <div class="align-middle md:py-15 mr-8 w-full md:w-2/5 text-3xl font-thin leading-9">
-        We've learned from the strengths and weaknesses of <span class="text-[#9970CB]">Terraform</span>, <span class="text-[#F7B832]">Pu</span><span class="text-[#F7A9B3]">lumi</span>
-     and the UX of modern code editors.
-<svg xmlns="http://www.w3.org/2000/svg" class="align-middle inline-block" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-</svg>      
-</div>
-      <dl class="w-full md:w-3/5">
-        <dt class="mb-4">
-          <h3 class="text-xl !m-0 font-semibold">
-            <div class="text-2xl">🎨</div>
-            The syntax and beautiful diagnostics of Terraform/HCL
-          </h3>
-        </dt>
-        <dd class="mb-16">
-          <p>
-            <strong>kcl</strong> uses the same parser as languages in the Hashicorp family and embraces its block-based
-            static strongly typed nature.
-            <br/>
-            It also introduces <strong>namespacing syntax</strong> and a refined stdlib unlike
-            Terraform it offers a <strong>less assertive execution strategy</strong> that gives the user
-            more abilities to influence deployments.
-          </p>
-        </dd>
-        <dt class="mb-4">
-          <h3 class="text-xl font-semibold">
-            <div class="text-2xl">🔨</div>
-            The flexibility during execution of Pulumi
-          </h3>
-        </dt>
-        <dd class="mb-16">
-          <p>
-            kcl offers a simple guided CLI and lets the user pick a Turing-complete language for maximum flexibility: you can
-            dig under the abstractions and rewrite kubernetes API queries and plans as you wish.
-          </p>
-        </dd>
-      </dl>
-    </div>
-  </div>
-
-   </div>
-  </div>
 </div>
                 
                   
