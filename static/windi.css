@@ -347,6 +347,9 @@
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
   }
+  .md\:text-center {
+    text-align: center;
+  }
   .md\:w-2\/5 {
     width: 40%;
   }
