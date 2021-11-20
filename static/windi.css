@@ -48,6 +48,9 @@
 .border-0 {
   border-width: 0px;
 }
+.cursor-pointer {
+  cursor: pointer;
+}
 .block {
   display: block;
 }
