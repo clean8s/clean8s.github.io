@@ -205,10 +205,6 @@
 .max-w-\[500px\] {
   max-width: 500px;
 }
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -311,6 +307,10 @@
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;
+  }
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
   .md\:py-15 {
     padding-top: 3.75rem;
