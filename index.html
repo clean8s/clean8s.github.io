@@ -298,7 +298,7 @@
 -->
 
 
-<link rel="stylesheet" href="/static/windi.css?2895">
+<link rel="stylesheet" href="/static/windi.css?1981">
 
 
 <!-- Header -->
@@ -675,7 +675,7 @@
       <div class="align-middle md:py-15 mr-8 w-full md:w-2/5 text-3xl font-thin leading-9">
         Shaped by case studies of <span class="text-[#9970CB]">Terraform</span> and <span class="text-[#F7B832]">Pu</span><span class="text-[#F7A9B3]">lumi</span>,
      and the UX of drag-n-drop deployments of the early Web.
-<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<svg xmlns="http://www.w3.org/2000/svg" class="align-middle h-8 w-8 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
 </svg>      
 </div>
@@ -683,17 +683,16 @@
         <dt class="mb-4">
           <h3 class="text-xl !m-0 font-semibold">
             <div class="text-2xl">🎨</div>
-            The syntax and beautiful diagnostics of Terraform and the HCL language
+            The syntax and beautiful diagnostics of Terraform/HCL
           </h3>
         </dt>
         <dd class="mb-16">
           <p>
-            kcl uses the same parser as languages in the Hashicorp family and embraces its block-based
+            <strong>kcl</strong> uses the same parser as languages in the Hashicorp family and embraces its block-based
             static strongly typed nature.
             <br/>
-            However, it also introduces namespacing support to blocks
-            and provides nicer APIs for extracting, checking and extending types, and unlike
-            Terraform it offers a less assertive execution strategy that gives the user
+            It also introduces <strong>namespacing syntax</strong> and a refined stdlib unlike
+            Terraform it offers a <strong>less assertive execution strategy</strong> that gives the user
             more abilities to influence deployments.
           </p>
         </dd>
@@ -705,8 +704,8 @@
         </dt>
         <dd class="mb-16">
           <p>
-            kcl offers a lightning fast CLI and lets the user pick a Turing-complete language for maximum flexibility: you can
-            rewrite kubernetes API queries and plans as you wish.
+            kcl offers a simple guided CLI and lets the user pick a Turing-complete language for maximum flexibility: you can
+            dig under the abstractions and rewrite kubernetes API queries and plans as you wish.
           </p>
         </dd>
       </dl>
