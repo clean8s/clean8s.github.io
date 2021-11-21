@@ -188,7 +188,7 @@
         top: 60px;
         left: 0;
         width: var(--sidebar);
-        height: 90vh;
+        height: calc(100vh - 170px);
 
         flex-basis: var(--sidebar);
         padding-top: 10px;
@@ -202,52 +202,6 @@
         flex-basis: var(--content);
         width: var(--content);
     }
-    /*.cool-btn {*/
-    /*    display: none;*/
-    /*}*/
-    /*#sidebar-toggle {*/
-    /*    position: absolute;*/
-    /*    visibility: hidden;*/
-    /*}*/
-    /*@media screen and (max-width: 800px) {*/
-    /*    .sidebar-nav {*/
-    /*        width: 25vmin;*/
-    /*    }*/
-    /*    .mmenu-wrap {*/
-    /*        font-size: 2.4vmin;*/
-    /*    }*/
-    /*    .cool-btn {*/
-    /*        user-select: none;*/
-    /*        display: block;*/
-    /*        background: var(--md-typeset-a-color);*/
-    /*        padding: 0.5rem 0.2rem;*/
-    /*        border: 0;*/
-    /*        color: #fff;*/
-    /*        width: 100%;*/
-    /*        font-size: 0.7rem;*/
-    /*        margin-left: -5px;*/
-    /*        margin-bottom: 1rem;*/
-    /*        cursor: pointer;*/
-    /*        text-align: center;*/
-    /*    }*/
-    /*    .opposite-btn {*/
-    /*        position: fixed;*/
-    /*        bottom: 1rem;*/
-    /*        left: 0.2rem;*/
-    /*        background: var(--md-typeset-a-color);*/
-    /*        padding: 0.5rem 0.2rem;*/
-    /*        border: 0;*/
-
-    /*    }*/
-    /*    #sidebar-toggle:checked ~ .sidebar-nav, #sidebar-toggle:checked ~ .sidebar-expander {*/
-    /*        width: 0;*/
-    /*    }*/
-    /*    .cool-btn .cool-icon {*/
-    /*        display: inline-flex;*/
-    /*        height: 1.125em;*/
-    /*        vertical-align: text-top;*/
-    /*    }*/
-    /*}*/
 </style>
 
     
@@ -309,7 +263,7 @@
 -->
 
 
-<link rel="stylesheet" href="/static/windi.css?v1642">
+<link rel="stylesheet" href="/static/windi.css?v540">
 
 
 <!-- Header -->
@@ -702,25 +656,23 @@
                         <dt class="mb-4">
                             <h3 class="text-xl !m-0 font-semibold">
                                 <div class="text-2xl">🎨</div>
-                                The syntax and beautiful diagnostics of Terraform/HCL
+                                Concise syntax & diagnostics like Terraform/HCL
                             </h3>
                         </dt>
                         <dd class="mb-16">
                             <p>
-                                <strong>kcl</strong> uses the same parser as languages in the Hashicorp family and
-                                embraces its block-based
-                                static strongly typed nature.
+                                <strong>kcl</strong> uses the same parser as Hashicorp family languages and
+                                embraces its static strongly typed nature.
                                 <br/>
-                                It also introduces <strong>namespacing syntax</strong> and a refined stdlib unlike
-                                Terraform it offers a <strong>less assertive execution strategy</strong> that gives the
-                                user
-                                more abilities to influence deployments.
+                                It also introduces <strong>namespacing syntax</strong> and a refined stdlib and
+                                offers a <strong>less assertive execution strategy</strong> that gives the
+                                user more abilities to influence deployments.
                             </p>
                         </dd>
                         <dt class="mb-4">
                             <h3 class="text-xl font-semibold">
                                 <div class="text-2xl">🔨</div>
-                                The flexibility during execution of Pulumi
+                                Flexibility during execution like Pulumi
                             </h3>
                         </dt>
                         <dd class="mb-16">
