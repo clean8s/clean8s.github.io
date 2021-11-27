@@ -268,17 +268,19 @@
 -->
 
 
-<link rel="stylesheet" href="/static/windi.css?v1550">
+<link rel="stylesheet" href="/static/windi.css?v1659">
 
 
 <!-- Header -->
 
-<a href="/" class="block md:text-center py-1">
+<div class="w-$content md:ml-$sidebar">
+<a href="/" class="block py-1">
     <img src="/static/logo.svg" class="align-middle" style="height: 30px;" alt="" /> <span class="align-middle ml-3 text-xs <md:text-[0.55rem] font-mono tracking-wide text-gray-500">clean & simple Kubernetes tools</span>
 </a>
+</div>
 <header class="md-header" data-md-component="header">
     <nav
-            class="md-header__inner md-grid"
+            class="md-header__inner md-grid md:w-$content md:ml-$sidebar md:mr-0"
             aria-label="Header"
     >
 

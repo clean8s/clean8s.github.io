@@ -325,6 +325,9 @@
 .w-\[200px\] {
   width: 200px;
 }
+.w-\$content {
+  width: var(--content);
+}
 @media (min-width: 768px) {
   .md\:flex {
     display: -webkit-box;
@@ -339,6 +342,12 @@
     -webkit-flex-direction: row;
     flex-direction: row;
   }
+  .md\:ml-\$sidebar {
+    margin-left: var(--sidebar);
+  }
+  .md\:mr-0 {
+    margin-right: 0px;
+  }
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -347,14 +356,14 @@
     padding-top: 3.75rem;
     padding-bottom: 3.75rem;
   }
-  .md\:text-center {
-    text-align: center;
-  }
   .md\:w-2\/5 {
     width: 40%;
   }
   .md\:w-3\/5 {
     width: 60%;
+  }
+  .md\:w-\$content {
+    width: var(--content);
   }
 }
 @media (max-width: 767.9px) {
