@@ -111,9 +111,6 @@
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
 }
-.font-mono {
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-}
 .\!font-bold {
   font-weight: 700 !important;
 }
@@ -158,10 +155,6 @@
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .leading-5 {
   line-height: 1.25rem;
 }
@@ -204,9 +197,6 @@
 .mb-16 {
   margin-bottom: 4rem;
 }
-.ml-3 {
-  margin-left: 0.75rem;
-}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -234,10 +224,6 @@
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 .pr-4 {
   padding-right: 1rem;
@@ -294,18 +280,11 @@
   --tw-text-opacity: 1;
   color: rgba(247, 169, 179, var(--tw-text-opacity));
 }
-.text-gray-500 {
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-}
 .uppercase {
   text-transform: uppercase;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
-}
-.tracking-wide {
-  letter-spacing: 0.025em;
 }
 .align-middle {
   vertical-align: middle;
@@ -324,9 +303,6 @@
 }
 .w-\[200px\] {
   width: 200px;
-}
-.w-\$content {
-  width: var(--content);
 }
 @media (min-width: 768px) {
   .md\:flex {
@@ -367,10 +343,6 @@
   }
 }
 @media (max-width: 767.9px) {
-  .\<md\:text-\[0\.55rem\] {
-    font-size: 0.55rem;
-    line-height: 1;
-  }
   .\<md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
